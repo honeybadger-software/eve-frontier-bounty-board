@@ -37,6 +37,10 @@ Every bounty is a public object on Sui, so any killboard, map or bot can read th
 
 Events to watch: `BountyPlacedEvent`, `BountyClaimedEvent`, `BountyRefundedEvent`.
 
+**Contract source:** [`contract/`](contract/) holds the Move package exactly as published (`sources/bounty_board.move`,
+its tests, `Move.toml` with the world pin, and the `Published.toml` records for both cycles). The rules the contract
+enforces are written out at the top of `bounty_board.move`.
+
 ## Status
 
 Live on Stillness. It runs on EVE Frontier's test world with test tokens, so nobody risks real money. Feedback and ideas are welcome: open an issue here.

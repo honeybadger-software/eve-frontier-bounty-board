@@ -1,0 +1,14 @@
+[package]
+name = "hb_bounty"
+edition = "2024"
+
+[dependencies]
+# Cycle 7 world pin: world-contracts commit d3c7016 ("deploy: new worlds for UAT and Stillness", 2026-09-24) sets
+# testnet_stillness published-at = original-id = 0x7be18d62...9d92 (a fresh world, version 1). Fenris's wallet-core MVR
+# cache maps @evefrontier/world to it. The previous pin (324e4a5, world 0x8b8a/0x9194) is where Stillness ran through
+# Cycle 6; bounties posted there live on package 0x6405b822...5bdb.
+world = { git = "https://github.com/evefrontier/world-contracts.git", subdir = "contracts/world", rev = "d3c7016b48a796ee70ecff7b892316f2d0170282" }
+
+[environments]
+# Stillness shard chain-id. Plain `testnet` would link CCP's "nebula" test world - wrong shard.
+testnet_stillness = "4c78adac"
